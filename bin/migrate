@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+
+require "bundler/setup"
+require 'active_record'
+Dir["#{File.dirname(__FILE__)}/../db/migrations/*.rb"].each {|file| load file }
+require "slack/clicker/config"
+
+Slack::Clicker::Config.new
+InitialSchema.migrate(:up)
