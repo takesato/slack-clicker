@@ -1,7 +1,10 @@
-require "slack/clicker/version"
+require 'dotenv'
+require 'slack'
+require 'singleton'
+require 'active_record'
 
-module Slack
-  module Clicker
-    # Your code goes here...
-  end
-end
+Dotenv.load
+
+require 'slack/clicker/version'
+require 'slack/clicker/config'
+require 'slack/clicker/client'
